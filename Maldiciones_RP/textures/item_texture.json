@@ -1,0 +1,18 @@
+{
+  "resource_pack_name": "maldiciones_rp",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "pergamino_vertigo_errante": {
+      "textures": "textures/items/pergamino_vertigo_errante"
+    },
+    "pergamino_hipo_ascendente": {
+      "textures": "textures/items/pergamino_hipo_ascendente"
+    },
+    "pergamino_desvelo_sombrio": {
+      "textures": "textures/items/pergamino_desvelo_sombrio"
+    },
+    "rosario": {
+      "textures": "textures/items/rosario"
+    }
+  }
+}
