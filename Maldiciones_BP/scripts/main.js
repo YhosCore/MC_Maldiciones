@@ -252,12 +252,9 @@ function dropRandomInventoryItems(player) {
       inventory.setItem(slot, undefined);
     }
 
-    const itemEntity = player.dimension.spawnItem(droppedItem, {
-      x: player.location.x,
-      y: player.location.y + 0.8,
-      z: player.location.z
-    });
-    launchDroppedItem(player, itemEntity);
+    const dropTarget = getDropTargetInFrontOfPlayer(player);
+    const itemEntity = player.dimension.spawnItem(droppedItem, dropTarget.location);
+    launchDroppedItem(player, itemEntity, dropTarget.direction);
   }
 
   tell(player, "Manos Resbaladizas lanzo objetos fuera de tu inventario.");
@@ -273,13 +270,32 @@ function createDroppedStack(item, amount) {
   }
 }
 
-function launchDroppedItem(player, itemEntity) {
+function getDropTargetInFrontOfPlayer(player) {
+  const viewDirection = player.getViewDirection();
+  const horizontalLength = Math.max(Math.hypot(viewDirection.x, viewDirection.z), 0.001);
+  const direction = {
+    x: viewDirection.x / horizontalLength,
+    z: viewDirection.z / horizontalLength
+  };
+  const distance = randomFloat(3.5, 5);
+  const sideOffset = randomFloat(-0.45, 0.45);
+
+  return {
+    location: {
+      x: player.location.x + direction.x * distance + direction.z * sideOffset,
+      y: player.location.y + 1.1,
+      z: player.location.z + direction.z * distance - direction.x * sideOffset
+    },
+    direction
+  };
+}
+
+function launchDroppedItem(player, itemEntity, direction) {
   try {
-    const direction = player.getViewDirection();
     itemEntity.applyImpulse({
-      x: direction.x * randomFloat(0.25, 0.55),
-      y: randomFloat(0.25, 0.45),
-      z: direction.z * randomFloat(0.25, 0.55)
+      x: direction.x * randomFloat(0.55, 0.9),
+      y: randomFloat(0.3, 0.6),
+      z: direction.z * randomFloat(0.55, 0.9)
     });
   } catch {
     // If this runtime cannot impulse item entities, spawning still drops it.
