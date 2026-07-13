@@ -64,7 +64,7 @@ Ejemplo:
 
 - Activacion automatica: jugar 30 minutos continuos.
 - Duracion: 10 minutos.
-- Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos.
+- Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, varios bloques frente al jugador para evitar recogerlos al instante.
 - No debe aplicar mareo ni efectos visuales.
 - Pergamino de prueba: `mal:pergamino_vertigo_errante`.
 
@@ -90,6 +90,7 @@ Ejemplo:
 - Identificador: `mal:rosario`.
 - Inspiracion: cultura mexicana.
 - Funcion: limpia todas las maldiciones activas del jugador.
+- Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
 
 ## Comandos de prueba
