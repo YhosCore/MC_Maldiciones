@@ -2,7 +2,7 @@
 
 Addon basico para Minecraft Bedrock con tres maldiciones automaticas. Los pergaminos se mantienen solo para probarlas rapido.
 
-Version actual: 1.0.5. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.6. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Maldiciones
 
@@ -32,3 +32,14 @@ Abre esta carpeta:
 ```text
 C:\Users\manue\Escritorio\Minecraft_Proyectos\Addon_Maldiciones
 ```
+
+## Organizacion del codigo
+
+El script esta separado por responsabilidades:
+
+- `scripts/main.js`: punto de entrada del addon.
+- `scripts/curses/`: una maldicion por archivo.
+- `scripts/core/`: registro, ejecucion y limpieza de maldiciones.
+- `scripts/items/`: comportamiento de items como pergaminos y Rosario.
+- `scripts/triggers/`: activadores automaticos por condiciones del jugador.
+- `scripts/utils/`: funciones compartidas.

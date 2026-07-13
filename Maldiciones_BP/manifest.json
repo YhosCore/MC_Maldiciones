@@ -1,30 +1,30 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Maldiciones BP v1.0.5",
-    "description": "Version 1.0.5 - Paquete de comportamiento para el addon de maldiciones.",
+    "name": "Maldiciones BP v1.0.6",
+    "description": "Version 1.0.6 - Paquete de comportamiento para el addon de maldiciones.",
     "uuid": "b4141093-c977-4cf4-9845-18b4fdb2acbf",
-    "version": [1, 0, 5],
+    "version": [1, 0, 6],
     "min_engine_version": [1, 20, 80]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "4cc37367-67b1-44bf-997a-44032f01bc5c",
-      "version": [1, 0, 5]
+      "version": [1, 0, 6]
     },
     {
       "type": "script",
       "language": "javascript",
       "entry": "scripts/main.js",
       "uuid": "4526b22d-a378-47d9-8ade-419f0336cdb9",
-      "version": [1, 0, 5]
+      "version": [1, 0, 6]
     }
   ],
   "dependencies": [
     {
       "uuid": "677c6c53-04cc-4221-b4e8-b99b7707b66d",
-      "version": [1, 0, 5]
+      "version": [1, 0, 6]
     },
     {
       "module_name": "@minecraft/server",

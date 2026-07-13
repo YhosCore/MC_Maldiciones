@@ -20,6 +20,12 @@ Maldiciones_BP/
   manifest.json
   items/
   scripts/
+    main.js
+    core/
+    curses/
+    items/
+    triggers/
+    utils/
 
 Maldiciones_RP/
   manifest.json
@@ -122,3 +128,12 @@ Get-ChildItem -Path . -Recurse -Filter *.json | ForEach-Object {
 
 node --check Maldiciones_BP\scripts\main.js
 ```
+
+## Organizacion modular del codigo
+
+- Cada maldicion debe vivir en su propio archivo dentro de `Maldiciones_BP/scripts/curses/`.
+- `main.js` debe mantenerse como punto de entrada minimo.
+- La activacion y ejecucion de maldiciones debe pasar por `scripts/core/curseManager.js`.
+- Los items de prueba y limpieza deben manejarse desde `scripts/items/`.
+- Las condiciones automaticas del jugador deben manejarse desde `scripts/triggers/`.
+- La logica compartida debe ir en `scripts/utils/`.
