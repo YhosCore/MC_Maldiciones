@@ -64,7 +64,7 @@ Ejemplo:
 
 - Activacion automatica: jugar 30 minutos continuos.
 - Duracion: 10 minutos.
-- Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, varios bloques frente al jugador para evitar recogerlos al instante.
+- Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador para evitar recogerlos al instante sin mandarlos demasiado lejos.
 - No debe aplicar mareo ni efectos visuales.
 - Pergamino de prueba: `mal:pergamino_vertigo_errante`.
 

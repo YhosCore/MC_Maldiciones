@@ -277,8 +277,8 @@ function getDropTargetInFrontOfPlayer(player) {
     x: viewDirection.x / horizontalLength,
     z: viewDirection.z / horizontalLength
   };
-  const distance = randomFloat(3.5, 5);
-  const sideOffset = randomFloat(-0.45, 0.45);
+  const distance = randomFloat(2, 3);
+  const sideOffset = randomFloat(-0.25, 0.25);
 
   return {
     location: {
@@ -293,9 +293,9 @@ function getDropTargetInFrontOfPlayer(player) {
 function launchDroppedItem(player, itemEntity, direction) {
   try {
     itemEntity.applyImpulse({
-      x: direction.x * randomFloat(0.55, 0.9),
-      y: randomFloat(0.3, 0.6),
-      z: direction.z * randomFloat(0.55, 0.9)
+      x: direction.x * randomFloat(0.18, 0.35),
+      y: randomFloat(0.15, 0.3),
+      z: direction.z * randomFloat(0.18, 0.35)
     });
   } catch {
     // If this runtime cannot impulse item entities, spawning still drops it.
