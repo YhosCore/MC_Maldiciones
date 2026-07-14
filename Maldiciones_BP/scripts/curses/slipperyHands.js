@@ -8,13 +8,12 @@ export const slipperyHandsCurse = {
 
   createState() {
     return {
-      remaining: 10 * 60,
       nextDrop: randomInt(12, 35)
     };
   },
 
   onStart(player) {
-    tell(player, "La Maldicion de Manos Resbaladizas se aferra a ti por 10 minutos.");
+    tell(player, "La Maldicion de Manos Resbaladizas se aferra a ti.");
   },
 
   tick(player, state) {

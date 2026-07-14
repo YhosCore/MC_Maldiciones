@@ -26,41 +26,21 @@ export function tickPlayerCurses(player) {
   }
 
   for (const [curseId, state] of states) {
-    if (tickCurse(player, state)) {
-      states.delete(curseId);
-    }
-  }
-
-  if (states.size === 0) {
-    activeCurses.delete(player.id);
+    curseDefinitions.get(curseId)?.tick(player, state);
   }
 }
 
 export function clearCurses(player) {
   const states = activeCurses.get(player.id);
   if (!states || states.size === 0) {
-    tell(player, "La Limpia Huevo no encuentra ninguna maldicion activa.");
+    tell(player, "La Limpia no encuentra ninguna maldicion activa.");
     return;
   }
 
   states.clear();
   activeCurses.delete(player.id);
   clearNegativeEffects(player);
-  tell(player, "La Limpia Huevo rompe las maldiciones activas.");
-}
-
-function tickCurse(player, state) {
-  state.remaining -= 1;
-
-  if (state.remaining <= 0) {
-    if (!state.silent) {
-      tell(player, "La maldicion se ha disipado.");
-    }
-    return true;
-  }
-
-  curseDefinitions.get(state.id)?.tick(player, state);
-  return false;
+  tell(player, "La Limpia rompe las maldiciones activas.");
 }
 
 function getActiveCurses(player) {

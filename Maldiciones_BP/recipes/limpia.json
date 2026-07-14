@@ -2,7 +2,7 @@
   "format_version": "1.17.41",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "mal:limpia_huevo"
+      "identifier": "mal:limpia"
     },
     "tags": ["crafting_table"],
     "pattern": [
@@ -23,7 +23,7 @@
     },
     "result": [
       {
-        "item": "mal:limpia_huevo",
+        "item": "mal:limpia",
         "count": 1
       },
       {

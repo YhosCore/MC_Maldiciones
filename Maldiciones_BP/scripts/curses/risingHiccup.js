@@ -6,7 +6,6 @@ export const risingHiccupCurse = {
 
   createState() {
     return {
-      remaining: 60,
       nextJump: randomInt(3, 8),
       silent: true
     };

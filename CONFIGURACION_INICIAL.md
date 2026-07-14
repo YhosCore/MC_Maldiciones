@@ -70,7 +70,7 @@ Ejemplo:
 ### Manos Resbaladizas
 
 - Activacion automatica: jugar 30 minutos continuos.
-- Duracion: 10 minutos.
+- Duracion: permanente hasta usar `mal:limpia`.
 - Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador para evitar recogerlos al instante sin mandarlos demasiado lejos.
 - No debe aplicar mareo ni efectos visuales.
 - Pergamino de prueba: `mal:pergamino_vertigo_errante`.
@@ -78,7 +78,7 @@ Ejemplo:
 ### Hipo Ascendente
 
 - Activacion automatica: nadar mas de 1 minuto en agua.
-- Duracion: 1 minuto.
+- Duracion: permanente hasta usar `mal:limpia`.
 - Efecto: teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira en intervalos aleatorios.
 - Sonido: reproduce `mal.hiccup` con volumen moderado cada vez que se ejecuta el hipo.
 - No debe mostrar mensajes en chat ni actionbar al activarse o ejecutarse.
@@ -87,22 +87,22 @@ Ejemplo:
 ### Desvelo Sombrio
 
 - Activacion automatica: pasar una noche sin dormir.
-- Duracion: 4 minutos.
+- Duracion: permanente hasta usar `mal:limpia`.
 - Efecto: altera la vision con oscuridad y ceguera intermitente.
 - Pergamino de prueba: `mal:pergamino_desvelo_sombrio`.
 
 ## Item de limpieza
 
-### Limpia Huevo
+### Limpia
 
-- Identificador: `mal:limpia_huevo`.
+- Identificador: `mal:limpia`.
 - Nombre de textura: `limpia_huevo.png`.
 - Inspiracion: limpia con huevo de la cultura mexicana.
 - Funcion: limpia todas las maldiciones activas del jugador.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
 - Receta: se crea en mesa de trabajo con forma fija: huevo arriba al centro, cubo de agua al centro, cristal a la izquierda, derecha y abajo del cubo.
-- La receta debe usar un formato compatible tipo `1.17.41`, identificador igual al item y resultado multiple para entregar `mal:limpia_huevo` y `minecraft:bucket`.
+- La receta debe usar un formato compatible tipo `1.17.41`, identificador igual al item y resultado multiple para entregar `mal:limpia` y `minecraft:bucket`.
 
 ```text
 [ Vacio   ] [ Huevo        ] [ Vacio   ]
@@ -116,7 +116,7 @@ Ejemplo:
 /give @s mal:pergamino_vertigo_errante
 /give @s mal:pergamino_hipo_ascendente
 /give @s mal:pergamino_desvelo_sombrio
-/give @s mal:limpia_huevo
+/give @s mal:limpia
 ```
 
 ## Flujo Git
