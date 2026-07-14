@@ -101,6 +101,8 @@ Ejemplo:
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
 - Receta: se crea en mesa de trabajo con forma fija: huevo arriba al centro, cubo de agua al centro, cristal a la izquierda, derecha y abajo del cubo.
+- La receta debe estar desbloqueada con `AlwaysUnlocked`.
+- La receta debe devolver `mal:limpia_huevo` y `minecraft:bucket`.
 
 ```text
 [ Vacio   ] [ Huevo        ] [ Vacio   ]
