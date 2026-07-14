@@ -79,7 +79,7 @@ Ejemplo:
 
 - Activacion automatica: nadar mas de 1 minuto en agua.
 - Duracion: 1 minuto.
-- Efecto: teletransporta al jugador de 2 a 6 bloques hacia arriba en intervalos aleatorios.
+- Efecto: teletransporta al jugador de 2 a 6 bloques hacia arriba y de 1 a 2 bloques hacia atras de donde mira en intervalos aleatorios.
 - No debe mostrar mensajes en chat ni actionbar al activarse o ejecutarse.
 - Pergamino de prueba: `mal:pergamino_hipo_ascendente`.
 
