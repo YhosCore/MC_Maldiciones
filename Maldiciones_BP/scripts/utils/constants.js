@@ -3,7 +3,8 @@ export const TICKS_PER_SECOND = 20;
 export const CURSE_IDS = {
   SLIPPERY_HANDS: "manos_resbaladizas",
   RISING_HICCUP: "hipo_ascendente",
-  SHADOWED_WAKEFULNESS: "desvelo_sombrio"
+  SHADOWED_WAKEFULNESS: "desvelo_sombrio",
+  WARDEN_NIGHTMARE: "pesadilla_del_warden"
 };
 
 export const SCROLL_TO_CURSE = {

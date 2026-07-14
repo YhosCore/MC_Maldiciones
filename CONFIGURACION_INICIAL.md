@@ -22,6 +22,7 @@ Maldiciones_BP/
   recipes/
   scripts/
     main.js
+    behaviors/
     core/
     curses/
     items/
@@ -91,6 +92,20 @@ Ejemplo:
 - Efecto: altera la vision con oscuridad y ceguera intermitente.
 - Pergamino de prueba: `mal:pergamino_desvelo_sombrio`.
 
+### Pesadilla del Warden
+
+- Activacion automatica: al intentar dormir, con probabilidad de 1 entre 20.
+- Duracion: 60 segundos.
+- Efecto: despierta al jugador, muestra una advertencia e invoca un Warden cerca. Si el jugador sobrevive, el Warden se elimina y la maldicion termina.
+- Limpieza: `mal:limpia` debe retirar esta maldicion y eliminar el Warden invocado.
+
+### Objeto Roto
+
+- Activacion automatica: al fabricar herramientas, armas o armaduras en una mesa de trabajo.
+- Probabilidad: 1 entre 5 por objeto fabricado.
+- Efecto: marca el objeto con lore, lo crea con parte de la durabilidad consumida y duplica el desgaste cuando se usa.
+- Limpieza: `mal:limpia` debe quitar la marca de Objeto Roto de los items del inventario.
+
 ## Item de limpieza
 
 ### Limpia
@@ -98,7 +113,7 @@ Ejemplo:
 - Identificador: `mal:limpia`.
 - Nombre de textura: `limpia_huevo.png`.
 - Inspiracion: limpia con huevo de la cultura mexicana.
-- Funcion: limpia todas las maldiciones activas del jugador.
+- Funcion: limpia todas las maldiciones activas del jugador y las marcas de Objeto Roto en el inventario.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
 - Receta: se crea en mesa de trabajo con forma fija: huevo arriba al centro, cubo de agua al centro, cristal a la izquierda, derecha y abajo del cubo.
@@ -143,6 +158,7 @@ node --check Maldiciones_BP\scripts\main.js
 ## Organizacion modular del codigo
 
 - Cada maldicion debe vivir en su propio archivo dentro de `Maldiciones_BP/scripts/curses/`.
+- Los comportamientos que viven en objetos o sistemas externos al jugador deben ir en `Maldiciones_BP/scripts/behaviors/`.
 - `main.js` debe mantenerse como punto de entrada minimo.
 - La activacion y ejecucion de maldiciones debe pasar por `scripts/core/curseManager.js`.
 - Los items de prueba y limpieza deben manejarse desde `scripts/items/`.

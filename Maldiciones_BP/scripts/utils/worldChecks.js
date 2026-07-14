@@ -28,3 +28,11 @@ export function isNightInOverworld(player) {
   const timeOfDay = world.getTimeOfDay();
   return timeOfDay >= 13000 && timeOfDay <= 23000;
 }
+
+export function isPlayerSleeping(player) {
+  try {
+    return player.isSleeping;
+  } catch {
+    return false;
+  }
+}

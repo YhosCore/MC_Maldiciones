@@ -1,6 +1,5 @@
 import { curseDefinitions } from "../curses/index.js";
 import { clearNegativeEffects } from "../utils/effects.js";
-import { tell } from "../utils/messages.js";
 
 const activeCurses = new Map();
 
@@ -26,21 +25,51 @@ export function tickPlayerCurses(player) {
   }
 
   for (const [curseId, state] of states) {
-    curseDefinitions.get(curseId)?.tick(player, state);
+    const definition = curseDefinitions.get(curseId);
+    if (definition?.tick(player, state)) {
+      definition.onExpire?.(player, state);
+      states.delete(curseId);
+    }
+  }
+
+  if (states.size === 0) {
+    activeCurses.delete(player.id);
   }
 }
 
 export function clearCurses(player) {
   const states = activeCurses.get(player.id);
   if (!states || states.size === 0) {
-    tell(player, "La Limpia no encuentra ninguna maldicion activa.");
-    return;
+    return false;
+  }
+
+  for (const [curseId, state] of states) {
+    curseDefinitions.get(curseId)?.onClear?.(player, state);
   }
 
   states.clear();
   activeCurses.delete(player.id);
   clearNegativeEffects(player);
-  tell(player, "La Limpia rompe las maldiciones activas.");
+  return true;
+}
+
+export function getCurseState(player, curseId) {
+  return activeCurses.get(player.id)?.get(curseId);
+}
+
+export function removeCurse(player, curseId) {
+  const states = activeCurses.get(player.id);
+  const state = states?.get(curseId);
+  if (!states || !state) {
+    return;
+  }
+
+  curseDefinitions.get(curseId)?.onClear?.(player, state);
+  states.delete(curseId);
+
+  if (states.size === 0) {
+    activeCurses.delete(player.id);
+  }
 }
 
 function getActiveCurses(player) {
