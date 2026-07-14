@@ -100,7 +100,7 @@ Ejemplo:
 - Funcion: limpia todas las maldiciones activas del jugador.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
-- Receta: se crea en mesa de trabajo con un huevo y un frasco de pocion. Se usa `minecraft:potion` sin `data` para evitar fallos de coincidencia en Bedrock.
+- Receta: se crea en mesa de trabajo con un huevo y una botella de cristal. Se usa `minecraft:glass_bottle` porque el frasco con agua es una variante de `minecraft:potion` y puede no coincidir en recetas normales de Bedrock.
 
 ## Comandos de prueba
 
