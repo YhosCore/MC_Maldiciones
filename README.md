@@ -2,7 +2,7 @@
 
 Addon basico para Minecraft Bedrock con tres maldiciones automaticas. Los pergaminos se mantienen solo para probarlas rapido.
 
-Version actual: 1.0.10. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.11. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Maldiciones
 
