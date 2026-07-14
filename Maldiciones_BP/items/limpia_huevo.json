@@ -11,7 +11,9 @@
       "minecraft:display_name": {
         "value": "Limpia Huevo"
       },
-      "minecraft:icon": "limpia_huevo",
+      "minecraft:icon": {
+        "texture": "limpia_huevo"
+      },
       "minecraft:max_stack_size": 1,
       "minecraft:use_animation": "bow",
       "minecraft:use_modifiers": {
