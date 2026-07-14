@@ -2,16 +2,16 @@
   "format_version": "1.20.80",
   "minecraft:item": {
     "description": {
-      "identifier": "mal:rosario",
+      "identifier": "mal:limpia_huevo",
       "menu_category": {
         "category": "items"
       }
     },
     "components": {
       "minecraft:display_name": {
-        "value": "Rosario"
+        "value": "Limpia Huevo"
       },
-      "minecraft:icon": "rosario",
+      "minecraft:icon": "limpia_huevo",
       "minecraft:max_stack_size": 1,
       "minecraft:use_animation": "bow",
       "minecraft:use_modifiers": {

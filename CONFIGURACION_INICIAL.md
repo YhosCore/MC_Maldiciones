@@ -19,7 +19,14 @@ El proyecto debe conservar dos paquetes principales:
 Maldiciones_BP/
   manifest.json
   items/
+  recipes/
   scripts/
+    main.js
+    core/
+    curses/
+    items/
+    triggers/
+    utils/
 
 Maldiciones_RP/
   manifest.json
@@ -64,7 +71,7 @@ Ejemplo:
 
 - Activacion automatica: jugar 30 minutos continuos.
 - Duracion: 10 minutos.
-- Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, varios bloques frente al jugador para evitar recogerlos al instante.
+- Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador para evitar recogerlos al instante sin mandarlos demasiado lejos.
 - No debe aplicar mareo ni efectos visuales.
 - Pergamino de prueba: `mal:pergamino_vertigo_errante`.
 
@@ -85,13 +92,15 @@ Ejemplo:
 
 ## Item de limpieza
 
-### Rosario
+### Limpia Huevo
 
-- Identificador: `mal:rosario`.
-- Inspiracion: cultura mexicana.
+- Identificador: `mal:limpia_huevo`.
+- Nombre de textura: `limpia_huevo.png`.
+- Inspiracion: limpia con huevo de la cultura mexicana.
 - Funcion: limpia todas las maldiciones activas del jugador.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
+- Receta: se crea en mesa de trabajo con un huevo y un frasco de pocion con agua.
 
 ## Comandos de prueba
 
@@ -99,7 +108,7 @@ Ejemplo:
 /give @s mal:pergamino_vertigo_errante
 /give @s mal:pergamino_hipo_ascendente
 /give @s mal:pergamino_desvelo_sombrio
-/give @s mal:rosario
+/give @s mal:limpia_huevo
 ```
 
 ## Flujo Git
@@ -122,3 +131,12 @@ Get-ChildItem -Path . -Recurse -Filter *.json | ForEach-Object {
 
 node --check Maldiciones_BP\scripts\main.js
 ```
+
+## Organizacion modular del codigo
+
+- Cada maldicion debe vivir en su propio archivo dentro de `Maldiciones_BP/scripts/curses/`.
+- `main.js` debe mantenerse como punto de entrada minimo.
+- La activacion y ejecucion de maldiciones debe pasar por `scripts/core/curseManager.js`.
+- Los items de prueba y limpieza deben manejarse desde `scripts/items/`.
+- Las condiciones automaticas del jugador deben manejarse desde `scripts/triggers/`.
+- La logica compartida debe ir en `scripts/utils/`.

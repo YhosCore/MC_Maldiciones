@@ -2,14 +2,14 @@
 
 Addon basico para Minecraft Bedrock con tres maldiciones automaticas. Los pergaminos se mantienen solo para probarlas rapido.
 
-Version actual: 1.0.4. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.7. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Maldiciones
 
-- Manos Resbaladizas: se consigue por jugar 30 minutos continuos. Dura 10 minutos y cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, varios bloques frente al jugador para evitar recogerlos al instante.
+- Manos Resbaladizas: se consigue por jugar 30 minutos continuos. Dura 10 minutos y cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador.
 - Hipo Ascendente: se consigue por nadar mas de 1 minuto en el agua. Dura 1 minuto y teletransporta al jugador de 2 a 6 bloques hacia arriba en intervalos aleatorios.
 - Desvelo Sombrio: se consigue por pasar una noche sin dormir. Dura 4 minutos y altera la vision con ciclos de oscuridad y ceguera.
-- Rosario: item de un solo uso inspirado en la cultura mexicana que limpia todas las maldiciones activas al usarse.
+- Limpia Huevo: item de un solo uso que limpia todas las maldiciones activas al usarse. Se craftea con un huevo y un frasco de pocion con agua en la mesa de trabajo.
 
 ## Como probarlo
 
@@ -22,7 +22,7 @@ Version actual: 1.0.4. Los archivos `.mcaddon` se exportan con version en el nom
 /give @s mal:pergamino_vertigo_errante
 /give @s mal:pergamino_hipo_ascendente
 /give @s mal:pergamino_desvelo_sombrio
-/give @s mal:rosario
+/give @s mal:limpia_huevo
 ```
 
 ## Abrir en VS Code
@@ -32,3 +32,14 @@ Abre esta carpeta:
 ```text
 C:\Users\manue\Escritorio\Minecraft_Proyectos\Addon_Maldiciones
 ```
+
+## Organizacion del codigo
+
+El script esta separado por responsabilidades:
+
+- `scripts/main.js`: punto de entrada del addon.
+- `scripts/curses/`: una maldicion por archivo.
+- `scripts/core/`: registro, ejecucion y limpieza de maldiciones.
+- `scripts/items/`: comportamiento de items como pergaminos y Limpia Huevo.
+- `scripts/triggers/`: activadores automaticos por condiciones del jugador.
+- `scripts/utils/`: funciones compartidas.
