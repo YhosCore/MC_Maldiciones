@@ -1,17 +1,17 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Maldiciones RP v1.0.14",
-    "description": "Version 1.0.14 - Paquete de recursos para el addon de maldiciones.",
+    "name": "Maldiciones RP v1.0.15",
+    "description": "Version 1.0.15 - Paquete de recursos para el addon de maldiciones.",
     "uuid": "677c6c53-04cc-4221-b4e8-b99b7707b66d",
-    "version": [1, 0, 14],
+    "version": [1, 0, 15],
     "min_engine_version": [1, 20, 80]
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "506c3aa0-e5c0-49db-9c26-123f6cc9b84b",
-      "version": [1, 0, 14]
+      "version": [1, 0, 15]
     }
   ],
   "metadata": {
