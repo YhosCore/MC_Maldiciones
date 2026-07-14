@@ -2,12 +2,12 @@
 
 Addon basico para Minecraft Bedrock con tres maldiciones automaticas. Los pergaminos se mantienen solo para probarlas rapido.
 
-Version actual: 1.0.16. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.17. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Maldiciones
 
 - Manos Resbaladizas: se consigue por jugar 30 minutos continuos. Dura 10 minutos y cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador.
-- Hipo Ascendente: se consigue por nadar mas de 1 minuto en el agua. Dura 1 minuto y teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira, sin mensajes de comando.
+- Hipo Ascendente: se consigue por nadar mas de 1 minuto en el agua. Dura 1 minuto, reproduce un sonido de hipo y teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira, sin mensajes de comando.
 - Desvelo Sombrio: se consigue por pasar una noche sin dormir. Dura 4 minutos y altera la vision con ciclos de oscuridad y ceguera.
 - Limpia Huevo: item de un solo uso que limpia todas las maldiciones activas al usarse. Se craftea con un huevo, 3 cristales y un cubo de agua en la mesa de trabajo. La receta tambien entrega una cubeta vacia.
 

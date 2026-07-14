@@ -1,0 +1,11 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "mal.hiccup": {
+      "category": "player",
+      "sounds": [
+        "sounds/maldiciones/hiccup"
+      ]
+    }
+  }
+}

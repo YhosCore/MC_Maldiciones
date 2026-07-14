@@ -80,6 +80,7 @@ Ejemplo:
 - Activacion automatica: nadar mas de 1 minuto en agua.
 - Duracion: 1 minuto.
 - Efecto: teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira en intervalos aleatorios.
+- Sonido: reproduce `mal.hiccup` con volumen moderado cada vez que se ejecuta el hipo.
 - No debe mostrar mensajes en chat ni actionbar al activarse o ejecutarse.
 - Pergamino de prueba: `mal:pergamino_hipo_ascendente`.
 
