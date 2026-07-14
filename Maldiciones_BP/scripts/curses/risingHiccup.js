@@ -1,4 +1,4 @@
-import { randomInt } from "../utils/random.js";
+import { randomFloat, randomInt } from "../utils/random.js";
 
 export const risingHiccupCurse = {
   id: "hipo_ascendente",
@@ -23,8 +23,8 @@ export const risingHiccupCurse = {
 };
 
 function teleportPlayerUp(player) {
-  const height = randomInt(2, 6);
-  const backwardDistance = randomInt(1, 2);
+  const height = randomInt(1, 3);
+  const backwardDistance = randomFloat(0.4, 1);
   const viewDirection = player.getViewDirection();
   const horizontalLength = Math.max(Math.hypot(viewDirection.x, viewDirection.z), 0.001);
   const backward = {
