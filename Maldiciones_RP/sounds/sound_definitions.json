@@ -1,10 +1,13 @@
 {
-  "format_version": "1.14.0",
+  "format_version": "1.20.20",
   "sound_definitions": {
     "mal.hiccup": {
+      "__use_legacy_max_distance": "true",
       "category": "player",
+      "max_distance": null,
+      "min_distance": null,
       "sounds": [
-        "maldiciones/hiccup"
+        "sounds/maldiciones/hiccup"
       ]
     }
   }

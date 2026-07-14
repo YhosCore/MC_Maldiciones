@@ -54,7 +54,7 @@ function teleportPlayerUp(player) {
 
 function playHiccupSound(player) {
   try {
-    player.playSound(HICCUP_SOUND_ID, HICCUP_SOUND_OPTIONS);
+    player.dimension.playSound(HICCUP_SOUND_ID, player.location, HICCUP_SOUND_OPTIONS);
   } catch {
     // If the custom sound is not loaded, the hiccup effect still runs.
   }
