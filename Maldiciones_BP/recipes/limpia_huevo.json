@@ -1,18 +1,26 @@
 {
   "format_version": "1.20.80",
-  "minecraft:recipe_shapeless": {
+  "minecraft:recipe_shaped": {
     "description": {
       "identifier": "mal:recipe_limpia_huevo"
     },
     "tags": ["crafting_table"],
-    "ingredients": [
-      {
+    "pattern": [
+      " E ",
+      "GWG",
+      " G "
+    ],
+    "key": {
+      "E": {
         "item": "minecraft:egg"
       },
-      {
-        "item": "minecraft:glass_bottle"
+      "G": {
+        "item": "minecraft:glass"
+      },
+      "W": {
+        "item": "minecraft:water_bucket"
       }
-    ],
+    },
     "result": {
       "item": "mal:limpia_huevo",
       "count": 1
