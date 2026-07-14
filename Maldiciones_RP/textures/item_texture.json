@@ -11,8 +11,8 @@
     "pergamino_desvelo_sombrio": {
       "textures": "textures/items/pergamino_desvelo_sombrio"
     },
-    "rosario": {
-      "textures": "textures/items/rosario"
+    "limpia_huevo": {
+      "textures": "textures/items/limpia_huevo"
     }
   }
 }

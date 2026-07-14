@@ -19,6 +19,7 @@ El proyecto debe conservar dos paquetes principales:
 Maldiciones_BP/
   manifest.json
   items/
+  recipes/
   scripts/
     main.js
     core/
@@ -91,13 +92,15 @@ Ejemplo:
 
 ## Item de limpieza
 
-### Rosario
+### Limpia Huevo
 
-- Identificador: `mal:rosario`.
-- Inspiracion: cultura mexicana.
+- Identificador: `mal:limpia_huevo`.
+- Nombre de textura: `limpia_huevo.png`.
+- Inspiracion: limpia con huevo de la cultura mexicana.
 - Funcion: limpia todas las maldiciones activas del jugador.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
+- Receta: se crea en mesa de trabajo con un huevo y un frasco de pocion con agua.
 
 ## Comandos de prueba
 
@@ -105,7 +108,7 @@ Ejemplo:
 /give @s mal:pergamino_vertigo_errante
 /give @s mal:pergamino_hipo_ascendente
 /give @s mal:pergamino_desvelo_sombrio
-/give @s mal:rosario
+/give @s mal:limpia_huevo
 ```
 
 ## Flujo Git

@@ -39,14 +39,14 @@ export function tickPlayerCurses(player) {
 export function clearCurses(player) {
   const states = activeCurses.get(player.id);
   if (!states || states.size === 0) {
-    tell(player, "El Rosario no encuentra ninguna maldicion activa.");
+    tell(player, "La Limpia Huevo no encuentra ninguna maldicion activa.");
     return;
   }
 
   states.clear();
   activeCurses.delete(player.id);
   clearNegativeEffects(player);
-  tell(player, "El Rosario rompe las maldiciones activas.");
+  tell(player, "La Limpia Huevo rompe las maldiciones activas.");
 }
 
 function tickCurse(player, state) {

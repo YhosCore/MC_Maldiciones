@@ -12,4 +12,4 @@ export const SCROLL_TO_CURSE = {
   "mal:pergamino_desvelo_sombrio": CURSE_IDS.SHADOWED_WAKEFULNESS
 };
 
-export const CLEANSING_ITEMS = new Set(["mal:rosario"]);
+export const CLEANSING_ITEMS = new Set(["mal:limpia_huevo"]);
