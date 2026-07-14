@@ -71,7 +71,7 @@ function dropRandomInventoryItems(player) {
     launchDroppedItem(itemEntity, dropTarget.direction);
   }
 
-  tell(player, "Manos Resbaladizas lanzo objetos fuera de tu inventario.");
+  tell(player, "Upps...");
 }
 
 function createDroppedStack(item, amount) {
@@ -107,9 +107,9 @@ function getDropTargetInFrontOfPlayer(player) {
 function launchDroppedItem(itemEntity, direction) {
   try {
     itemEntity.applyImpulse({
-      x: direction.x * randomFloat(0.18, 0.35),
-      y: randomFloat(0.15, 0.3),
-      z: direction.z * randomFloat(0.18, 0.35)
+      x: direction.x * randomFloat(0.04, 0.1),
+      y: randomFloat(0.04, 0.12),
+      z: direction.z * randomFloat(0.04, 0.1)
     });
   } catch {
     // If this runtime cannot impulse item entities, spawning still drops it.

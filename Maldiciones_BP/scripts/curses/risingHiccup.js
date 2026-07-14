@@ -1,4 +1,4 @@
-import { randomInt } from "../utils/random.js";
+import { randomFloat, randomInt } from "../utils/random.js";
 
 export const risingHiccupCurse = {
   id: "hipo_ascendente",
@@ -23,6 +23,24 @@ export const risingHiccupCurse = {
 };
 
 function teleportPlayerUp(player) {
-  const height = randomInt(2, 6);
-  player.runCommandAsync(`tp @s ~ ~${height} ~`).catch(() => {});
+  const height = randomInt(1, 3);
+  const backwardDistance = randomFloat(0.4, 1);
+  const viewDirection = player.getViewDirection();
+  const horizontalLength = Math.max(Math.hypot(viewDirection.x, viewDirection.z), 0.001);
+  const backward = {
+    x: -viewDirection.x / horizontalLength,
+    z: -viewDirection.z / horizontalLength
+  };
+
+  player.teleport(
+    {
+      x: player.location.x + backward.x * backwardDistance,
+      y: player.location.y + height,
+      z: player.location.z + backward.z * backwardDistance
+    },
+    {
+      dimension: player.dimension,
+      rotation: player.getRotation()
+    }
+  );
 }

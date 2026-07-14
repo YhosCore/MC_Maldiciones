@@ -79,7 +79,7 @@ Ejemplo:
 
 - Activacion automatica: nadar mas de 1 minuto en agua.
 - Duracion: 1 minuto.
-- Efecto: teletransporta al jugador de 2 a 6 bloques hacia arriba en intervalos aleatorios.
+- Efecto: teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira en intervalos aleatorios.
 - No debe mostrar mensajes en chat ni actionbar al activarse o ejecutarse.
 - Pergamino de prueba: `mal:pergamino_hipo_ascendente`.
 
@@ -100,7 +100,14 @@ Ejemplo:
 - Funcion: limpia todas las maldiciones activas del jugador.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
-- Receta: se crea en mesa de trabajo con un huevo y un frasco de pocion con agua.
+- Receta: se crea en mesa de trabajo con forma fija: huevo arriba al centro, cubo de agua al centro, cristal a la izquierda, derecha y abajo del cubo.
+- La receta debe usar un formato compatible tipo `1.17.41`, identificador igual al item y resultado multiple para entregar `mal:limpia_huevo` y `minecraft:bucket`.
+
+```text
+[ Vacio   ] [ Huevo        ] [ Vacio   ]
+[ Cristal ] [ Cubo de agua ] [ Cristal ]
+[ Vacio   ] [ Cristal      ] [ Vacio   ]
+```
 
 ## Comandos de prueba
 

@@ -2,21 +2,29 @@
 
 Addon basico para Minecraft Bedrock con tres maldiciones automaticas. Los pergaminos se mantienen solo para probarlas rapido.
 
-Version actual: 1.0.7. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.16. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Maldiciones
 
 - Manos Resbaladizas: se consigue por jugar 30 minutos continuos. Dura 10 minutos y cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador.
-- Hipo Ascendente: se consigue por nadar mas de 1 minuto en el agua. Dura 1 minuto y teletransporta al jugador de 2 a 6 bloques hacia arriba en intervalos aleatorios.
+- Hipo Ascendente: se consigue por nadar mas de 1 minuto en el agua. Dura 1 minuto y teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira, sin mensajes de comando.
 - Desvelo Sombrio: se consigue por pasar una noche sin dormir. Dura 4 minutos y altera la vision con ciclos de oscuridad y ceguera.
-- Limpia Huevo: item de un solo uso que limpia todas las maldiciones activas al usarse. Se craftea con un huevo y un frasco de pocion con agua en la mesa de trabajo.
+- Limpia Huevo: item de un solo uso que limpia todas las maldiciones activas al usarse. Se craftea con un huevo, 3 cristales y un cubo de agua en la mesa de trabajo. La receta tambien entrega una cubeta vacia.
 
 ## Como probarlo
 
 1. Copia `Maldiciones_BP` a `com.mojang/development_behavior_packs`.
 2. Copia `Maldiciones_RP` a `com.mojang/development_resource_packs`.
 3. Activa ambos packs en un mundo con Cheats y Beta APIs/Script APIs si tu version lo solicita.
-4. Para probar sin esperar los requisitos automaticos, en creativo busca los pergaminos o usa comandos `/give`:
+4. Craftea Limpia Huevo con esta forma:
+
+```text
+[ Vacío   ] [ Huevo        ] [ Vacío   ]
+[ Cristal ] [ Cubo de agua ] [ Cristal ]
+[ Vacío   ] [ Cristal      ] [ Vacío   ]
+```
+
+5. Para probar sin esperar los requisitos automaticos, en creativo busca los pergaminos o usa comandos `/give`:
 
 ```mcfunction
 /give @s mal:pergamino_vertigo_errante
