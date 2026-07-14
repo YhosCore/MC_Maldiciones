@@ -4,7 +4,7 @@
     "mal.hiccup": {
       "category": "player",
       "sounds": [
-        "sounds/maldiciones/hiccup"
+        "maldiciones/hiccup"
       ]
     }
   }
