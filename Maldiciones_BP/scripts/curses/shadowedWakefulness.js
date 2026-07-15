@@ -8,7 +8,6 @@ export const shadowedWakefulnessCurse = {
 
   createState() {
     return {
-      remaining: 4 * 60,
       nextVisionPulse: 1,
       pulseIndex: 0
     };

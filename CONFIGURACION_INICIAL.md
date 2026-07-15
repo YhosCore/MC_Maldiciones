@@ -22,6 +22,7 @@ Maldiciones_BP/
   recipes/
   scripts/
     main.js
+    behaviors/
     core/
     curses/
     items/
@@ -70,7 +71,7 @@ Ejemplo:
 ### Manos Resbaladizas
 
 - Activacion automatica: jugar 30 minutos continuos.
-- Duracion: 10 minutos.
+- Duracion: permanente hasta usar `mal:limpia`.
 - Efecto: cada cierto tiempo lanza fuera del inventario de 1 a 3 objetos, de 2 a 3 bloques frente al jugador para evitar recogerlos al instante sin mandarlos demasiado lejos.
 - No debe aplicar mareo ni efectos visuales.
 - Pergamino de prueba: `mal:pergamino_vertigo_errante`.
@@ -78,30 +79,52 @@ Ejemplo:
 ### Hipo Ascendente
 
 - Activacion automatica: nadar mas de 1 minuto en agua.
-- Duracion: 1 minuto.
+- Duracion: permanente hasta usar `mal:limpia`.
 - Efecto: teletransporta al jugador de 1 a 3 bloques hacia arriba y de 0.4 a 1 bloque hacia atras de donde mira en intervalos aleatorios.
+- Sonido: reproduce `mal.hiccup` con volumen moderado cada vez que se ejecuta el hipo.
 - No debe mostrar mensajes en chat ni actionbar al activarse o ejecutarse.
 - Pergamino de prueba: `mal:pergamino_hipo_ascendente`.
 
 ### Desvelo Sombrio
 
 - Activacion automatica: pasar una noche sin dormir.
-- Duracion: 4 minutos.
+- Duracion: permanente hasta usar `mal:limpia`.
 - Efecto: altera la vision con oscuridad y ceguera intermitente.
 - Pergamino de prueba: `mal:pergamino_desvelo_sombrio`.
 
+### Pesadilla del Warden
+
+- Activacion automatica: al intentar dormir, con probabilidad de 1 entre 20.
+- Duracion: 60 segundos.
+- Efecto: despierta al jugador, muestra una advertencia e invoca un Warden cerca. Si el jugador sobrevive, el Warden se elimina y la maldicion termina.
+- Limpieza: `mal:limpia` debe retirar esta maldicion y eliminar el Warden invocado.
+
+### Objeto Roto
+
+- Activacion automatica: al fabricar herramientas, armas o armaduras en una mesa de trabajo.
+- Probabilidad: 1 entre 5 por objeto fabricado.
+- Efecto: marca el objeto con lore, lo crea con parte de la durabilidad consumida y duplica el desgaste cuando se usa.
+- Limpieza: `mal:limpia` debe quitar la marca de Objeto Roto de los items del inventario.
+
+### Entumecimiento Maldito
+
+- Activacion automatica: quedarse quieto durante 90 segundos.
+- Duracion: temporal.
+- Efecto: aplica lentitud fuerte durante 30 segundos. Despues, durante 15 segundos, si el jugador camina recibe dano.
+- Limpieza: `mal:limpia` debe retirar la lentitud y cancelar la maldicion activa.
+
 ## Item de limpieza
 
-### Limpia Huevo
+### Limpia
 
-- Identificador: `mal:limpia_huevo`.
+- Identificador: `mal:limpia`.
 - Nombre de textura: `limpia_huevo.png`.
 - Inspiracion: limpia con huevo de la cultura mexicana.
-- Funcion: limpia todas las maldiciones activas del jugador.
+- Funcion: limpia todas las maldiciones activas del jugador y las marcas de Objeto Roto en el inventario.
 - Uso: debe consumirse al usarse y tener stack maximo de 1.
 - Debe estar registrado como item en BP y con textura en RP.
 - Receta: se crea en mesa de trabajo con forma fija: huevo arriba al centro, cubo de agua al centro, cristal a la izquierda, derecha y abajo del cubo.
-- La receta debe usar un formato compatible tipo `1.17.41`, identificador igual al item y resultado multiple para entregar `mal:limpia_huevo` y `minecraft:bucket`.
+- La receta debe usar un formato compatible tipo `1.17.41`, identificador igual al item y resultado multiple para entregar `mal:limpia` y `minecraft:bucket`.
 
 ```text
 [ Vacio   ] [ Huevo        ] [ Vacio   ]
@@ -115,7 +138,7 @@ Ejemplo:
 /give @s mal:pergamino_vertigo_errante
 /give @s mal:pergamino_hipo_ascendente
 /give @s mal:pergamino_desvelo_sombrio
-/give @s mal:limpia_huevo
+/give @s mal:limpia
 ```
 
 ## Flujo Git
@@ -142,6 +165,7 @@ node --check Maldiciones_BP\scripts\main.js
 ## Organizacion modular del codigo
 
 - Cada maldicion debe vivir en su propio archivo dentro de `Maldiciones_BP/scripts/curses/`.
+- Los comportamientos que viven en objetos o sistemas externos al jugador deben ir en `Maldiciones_BP/scripts/behaviors/`.
 - `main.js` debe mantenerse como punto de entrada minimo.
 - La activacion y ejecucion de maldiciones debe pasar por `scripts/core/curseManager.js`.
 - Los items de prueba y limpieza deben manejarse desde `scripts/items/`.

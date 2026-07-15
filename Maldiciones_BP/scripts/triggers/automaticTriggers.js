@@ -1,10 +1,11 @@
-import { activateCurse } from "../core/curseManager.js";
+import { activateCurse, getCurseState } from "../core/curseManager.js";
 import { CURSE_IDS } from "../utils/constants.js";
-import { isNightInOverworld, isPlayerInWater } from "../utils/worldChecks.js";
+import { isNightInOverworld, isPlayerInWater, isPlayerSleeping } from "../utils/worldChecks.js";
 
 const PLAY_TIME_CURSE_SECONDS = 30 * 60;
 const SWIM_CURSE_SECONDS = 60;
 const AWAKE_NIGHT_CURSE_SECONDS = 8 * 60;
+const AFK_CURSE_SECONDS = 90;
 
 const playerProgress = new Map();
 
@@ -40,6 +41,8 @@ export function tickAutomaticTriggers(player) {
     progress.nightTriggered = true;
     activateCurse(player, CURSE_IDS.SHADOWED_WAKEFULNESS);
   }
+
+  tickAfkTrigger(player, progress);
 }
 
 function getProgress(player) {
@@ -50,10 +53,51 @@ function getProgress(player) {
       swimSeconds: 0,
       swimTriggered: false,
       awakeNightSeconds: 0,
-      nightTriggered: false
+      nightTriggered: false,
+      afkSeconds: 0,
+      afkTriggered: false,
+      lastAfkLocation: undefined
     };
     playerProgress.set(player.id, progress);
   }
 
   return progress;
+}
+
+function tickAfkTrigger(player, progress) {
+  const location = copyLocation(player.location);
+  if (!progress.lastAfkLocation) {
+    progress.lastAfkLocation = location;
+    return;
+  }
+
+  const hasMoved = hasMovedFrom(progress.lastAfkLocation, location);
+  progress.lastAfkLocation = location;
+
+  if (hasMoved || isPlayerSleeping(player)) {
+    progress.afkSeconds = 0;
+    progress.afkTriggered = false;
+    return;
+  }
+
+  if (progress.afkTriggered || getCurseState(player, CURSE_IDS.NUMBNESS)) {
+    return;
+  }
+
+  progress.afkSeconds += 1;
+  if (progress.afkSeconds >= AFK_CURSE_SECONDS) {
+    progress.afkSeconds = 0;
+    progress.afkTriggered = true;
+    activateCurse(player, CURSE_IDS.NUMBNESS);
+  }
+}
+
+function copyLocation(location) {
+  return { x: location.x, y: location.y, z: location.z };
+}
+
+function hasMovedFrom(previous, current) {
+  const xDifference = current.x - previous.x;
+  const zDifference = current.z - previous.z;
+  return xDifference * xDifference + zDifference * zDifference > 0.0025;
 }

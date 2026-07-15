@@ -6,7 +6,6 @@ export const risingHiccupCurse = {
 
   createState() {
     return {
-      remaining: 60,
       nextJump: randomInt(3, 8),
       silent: true
     };
@@ -17,9 +16,16 @@ export const risingHiccupCurse = {
 
     if (state.nextJump <= 0) {
       teleportPlayerUp(player);
+      playHiccupSound(player);
       state.nextJump = randomInt(2, 7);
     }
   }
+};
+
+const HICCUP_SOUND_ID = "mal.hiccup";
+const HICCUP_SOUND_OPTIONS = {
+  volume: 0.75,
+  pitch: 1.0
 };
 
 function teleportPlayerUp(player) {
@@ -43,4 +49,12 @@ function teleportPlayerUp(player) {
       rotation: player.getRotation()
     }
   );
+}
+
+function playHiccupSound(player) {
+  try {
+    player.dimension.playSound(HICCUP_SOUND_ID, player.location, HICCUP_SOUND_OPTIONS);
+  } catch {
+    // If the custom sound is not loaded, the hiccup effect still runs.
+  }
 }

@@ -3,7 +3,9 @@ export const TICKS_PER_SECOND = 20;
 export const CURSE_IDS = {
   SLIPPERY_HANDS: "manos_resbaladizas",
   RISING_HICCUP: "hipo_ascendente",
-  SHADOWED_WAKEFULNESS: "desvelo_sombrio"
+  SHADOWED_WAKEFULNESS: "desvelo_sombrio",
+  WARDEN_NIGHTMARE: "pesadilla_del_warden",
+  NUMBNESS: "entumecimiento_afk"
 };
 
 export const SCROLL_TO_CURSE = {
@@ -12,4 +14,4 @@ export const SCROLL_TO_CURSE = {
   "mal:pergamino_desvelo_sombrio": CURSE_IDS.SHADOWED_WAKEFULNESS
 };
 
-export const CLEANSING_ITEMS = new Set(["mal:limpia_huevo"]);
+export const CLEANSING_ITEMS = new Set(["mal:limpia"]);
