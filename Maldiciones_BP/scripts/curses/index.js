@@ -1,5 +1,6 @@
 import { shadowedWakefulnessCurse } from "./shadowedWakefulness.js";
 import { nightmareWardenCurse } from "./nightmareWarden.js";
+import { numbnessCurse } from "./numbness.js";
 import { risingHiccupCurse } from "./risingHiccup.js";
 import { slipperyHandsCurse } from "./slipperyHands.js";
 
@@ -7,5 +8,6 @@ export const curseDefinitions = new Map([
   [slipperyHandsCurse.id, slipperyHandsCurse],
   [risingHiccupCurse.id, risingHiccupCurse],
   [shadowedWakefulnessCurse.id, shadowedWakefulnessCurse],
-  [nightmareWardenCurse.id, nightmareWardenCurse]
+  [nightmareWardenCurse.id, nightmareWardenCurse],
+  [numbnessCurse.id, numbnessCurse]
 ]);

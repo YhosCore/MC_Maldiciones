@@ -4,7 +4,8 @@ export const CURSE_IDS = {
   SLIPPERY_HANDS: "manos_resbaladizas",
   RISING_HICCUP: "hipo_ascendente",
   SHADOWED_WAKEFULNESS: "desvelo_sombrio",
-  WARDEN_NIGHTMARE: "pesadilla_del_warden"
+  WARDEN_NIGHTMARE: "pesadilla_del_warden",
+  NUMBNESS: "entumecimiento_afk"
 };
 
 export const SCROLL_TO_CURSE = {

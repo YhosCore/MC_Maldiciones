@@ -106,6 +106,13 @@ Ejemplo:
 - Efecto: marca el objeto con lore, lo crea con parte de la durabilidad consumida y duplica el desgaste cuando se usa.
 - Limpieza: `mal:limpia` debe quitar la marca de Objeto Roto de los items del inventario.
 
+### Entumecimiento Maldito
+
+- Activacion automatica: quedarse quieto durante 90 segundos.
+- Duracion: temporal.
+- Efecto: aplica lentitud fuerte durante 30 segundos. Despues, durante 15 segundos, si el jugador camina recibe dano.
+- Limpieza: `mal:limpia` debe retirar la lentitud y cancelar la maldicion activa.
+
 ## Item de limpieza
 
 ### Limpia

@@ -12,7 +12,7 @@ export function addEffect(player, effectId, duration, amplifier) {
 }
 
 export function clearNegativeEffects(player) {
-  for (const effectId of ["nausea", "blindness", "darkness", "jump_boost"]) {
+  for (const effectId of ["nausea", "blindness", "darkness", "jump_boost", "slowness"]) {
     try {
       player.removeEffect(effectId);
     } catch {

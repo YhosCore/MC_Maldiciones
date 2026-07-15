@@ -2,7 +2,7 @@
 
 Addon basico para Minecraft Bedrock con maldiciones automaticas. Los pergaminos se mantienen solo para probar rapido las primeras maldiciones.
 
-Version actual: 1.0.21. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.22. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Maldiciones
 
@@ -11,6 +11,7 @@ Version actual: 1.0.21. Los archivos `.mcaddon` se exportan con version en el no
 - Desvelo Sombrio: se consigue por pasar una noche sin dormir. Es permanente hasta usar Limpia y altera la vision con ciclos de oscuridad y ceguera.
 - Pesadilla del Warden: al intentar dormir tiene una probabilidad de activarse. Despierta al jugador, invoca un Warden cerca durante 60 segundos y lo retira si sobrevives o si usas Limpia.
 - Objeto Roto: al fabricar herramientas, armas o armaduras en mesa de trabajo, existe probabilidad de que el objeto salga maldito. El objeto empieza gastado y pierde durabilidad al doble de velocidad.
+- Entumecimiento Maldito: se consigue por quedarse quieto durante 90 segundos. Primero aplica lentitud fuerte y despues, si caminas, recibes dano por tener las piernas entumidas.
 - Limpia: item de un solo uso que quita maldiciones activas y limpia Objetos Rotos del inventario. Se craftea con un huevo, 3 cristales y un cubo de agua en la mesa de trabajo. La receta tambien entrega una cubeta vacia.
 
 ## Como probarlo

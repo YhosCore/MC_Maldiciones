@@ -60,19 +60,19 @@ function wakePlayerFromNightmare(player) {
 
 function showNightmareWarning(player) {
   try {
-    player.onScreenDisplay.setTitle("ESCONDETE DE EL", {
+    player.onScreenDisplay.setTitle("§4¡ESCÓNDETE DE ÉL!", {
       fadeInDuration: 0,
       stayDuration: 60,
       fadeOutDuration: 20
     });
   } catch {
-    tell(player, "ESCONDETE DE EL");
+    tell(player, "¡ESCONDETE DE EL!");
   }
 }
 
 function showNightmareCountdown(player, seconds) {
   try {
-    player.onScreenDisplay.setTitle(`${seconds}`, {
+    player.onScreenDisplay.setTitle(`§4${seconds}`, {
       fadeInDuration: 0,
       stayDuration: TICKS_PER_SECOND,
       fadeOutDuration: 0
